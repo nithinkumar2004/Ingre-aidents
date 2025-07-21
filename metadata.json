@@ -1,0 +1,8 @@
+{
+  "name": "IngreAI-dient",
+  "description": "An AI-powered cooking assistant that suggests recipes from your ingredients, provides step-by-step instructions, and generates illustrative cooking animations.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "prompt": ""
+}

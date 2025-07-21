@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Page Info -->
+  <title>IngreAI-dient</title>
+  <meta name="description" content="An AI-powered cooking assistant that suggests recipes from your ingredients, provides step-by-step instructions, and generates illustrative cooking animations.">
+  
+  <!-- Favicon (Chef Emoji) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧑‍🍳</text></svg>">
+  
+  <!-- Social Media Meta Tags (Open Graph) -->
+  <meta property="og:title" content="IngreAI-dient">
+  <meta property="og:description" content="Get recipe suggestions from ingredients, with step-by-step instructions and AI-generated cooking animations.">
+  <meta property="og:type" content="website">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Scripts & Styles -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  </script>
+  <script>
+    // Configure Tailwind to use the Poppins font
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    /* Custom scrollbar styling */
+    .custom-scrollbar::-webkit-scrollbar { width: 8px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: #f9fafb; border-radius: 10px; }
+    html.dark .custom-scrollbar::-webkit-scrollbar-track { background: #1f2937; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 10px; }
+    html.dark .custom-scrollbar::-webkit-scrollbar-thumb { background: #4b5563; }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
+    html.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #6b7280; }
+
+    /* Basic loading indicator shown before React mounts */
+    #root:empty::before {
+      content: 'Loading IngreAI-dient...';
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-size: 1.5rem;
+      color: #4a5568;
+      font-family: 'Poppins', sans-serif;
+    }
+    html.dark #root:empty::before {
+        color: #d1d5db;
+    }
+  </style>
+  <script type="importmap">
+  {
+    "imports": {
+      "react": "https://esm.sh/react@^19.1.0",
+      "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+      "react/": "https://esm.sh/react@^19.1.0/",
+      "@google/genai": "https://esm.sh/@google/genai@^1.10.0"
+    }
+  }
+  </script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-white dark:bg-gray-900 font-sans">
+  <div id="root"></div>
+  <noscript>
+    <style>
+        body { background-color: #fff; color: #111827; }
+        @media (prefers-color-scheme: dark) {
+            body { background-color: #111827; color: #f9fafb; }
+            .noscript-text { color: #9ca3af; }
+        }
+    </style>
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; text-align: center; font-family: 'Poppins', sans-serif; padding: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 1rem;">JavaScript Required</h1>
+      <p>This application needs JavaScript to run. Please enable it in your browser settings and refresh the page.</p>
+      <p style="margin-top: 0.5rem;" class="noscript-text">IngreAI-dient uses modern web technologies to bring you the best cooking experience!</p>
+    </div>
+  </noscript>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
